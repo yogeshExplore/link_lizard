@@ -4,9 +4,6 @@ from app.connections.mongo_db import MongoDb as MongoDbConnection
 from time import time
 
 
-# todo we can use Factory , and Dependency injection also
-
-
 class MongoDb(Store):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

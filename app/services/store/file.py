@@ -2,8 +2,6 @@ from app import logger
 from app.services.store import Store
 from app.connections.file import File as FileConnection
 
-# todo we can use Factory , and Dependency injection also
-
 
 class File(Store):
     def __init__(self, **kwargs):
