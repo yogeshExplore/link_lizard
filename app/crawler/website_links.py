@@ -104,7 +104,7 @@ class WebsiteLinks(Crawler):
                                 self.origin_target_db = []
         self.store.write(self.origin_target_db)
         logger.info(f"[ANALYSIS] Total unique urls = {len(self.processed_urls)}, "
-                    f"Total task run = {tid}"
+                    f"Total task run = {tid}, "
                     f"Total requests made = {self.lrequest.total_count}"
                     )
 
