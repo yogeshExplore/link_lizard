@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+gevent = "*"
+bs4 = "*"
+pymongo = "*"
+python-dotenv = "*"
+validators = "*"
+pytest = "*"
+
+[dev-packages]
+flake8 = "*"
+
+[requires]
+python_version = "3.10"
