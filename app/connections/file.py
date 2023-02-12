@@ -1,6 +1,5 @@
 import os
-from app import logger
-from app import Setting
+from app import logger, Setting
 from time import time
 
 

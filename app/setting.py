@@ -18,10 +18,14 @@ class ValidateUrl(argparse.Action):
 
 def read_args():
     parser = argparse.ArgumentParser(description='Parameters for crawler')
-    parser.add_argument('--type', dest='CRAWLER_TYPE', action='store', required=False, help='website_link', type=str)
-    parser.add_argument('--url', dest='BASE_URL', action=ValidateUrl, required=True, type=str)
-    parser.add_argument('--workers', dest='WORKERS', action='store', required=False, type=int, help='number of workers')
-    parser.add_argument('--output', dest='OUTPUT', action='store', required=False, type=str, help='file|mongodb')
+    parser.add_argument('--type', dest='CRAWLER_TYPE',
+                        action='store', required=False, help='website_links', type=str, default='website_links')
+    parser.add_argument('--url', dest='BASE_URL',
+                        action=ValidateUrl, required=False, type=str, default='http://example.com')
+    parser.add_argument('--workers', dest='WORKERS', action='store',
+                        required=False, type=int, help='number of workers', default=1)
+    parser.add_argument('--output', dest='OUTPUT', action='store',
+                        required=False, type=str, help='file|mongodb', default='file')
     return parser.parse_args()
 
 
@@ -34,10 +38,10 @@ class Setting:
     ORGANISATION = 'Two'
 
     # Input Arguments
-    CRAWLER_TYPE = INPUT_ARGS.CRAWLER_TYPE or 'website_link'
+    CRAWLER_TYPE = INPUT_ARGS.CRAWLER_TYPE
     BASE_URL = INPUT_ARGS.BASE_URL
-    WORKERS = INPUT_ARGS.WORKERS or 10
-    OUTPUT = INPUT_ARGS.OUTPUT or 'file'
+    WORKERS = INPUT_ARGS.WORKERS
+    OUTPUT = INPUT_ARGS.OUTPUT
 
     FILE_PREFIX = 'website_crawler'
     BATCH_SIZE_DB_WRITE = 1000
