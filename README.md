@@ -43,7 +43,7 @@ Might be required in future, if you want to add other kind of crawlers
 For now only `--type website_links` works
 Default is `website_links`
 
-From your activated virtualenv please run `python -m app.main --url 'http://bbc.co.in' --workers 50 --output file`
+From your activated virtualenv please run `python -m app.main --url 'http://bbc.co.uk' --workers 50 --output file --type website_links`
 
 ### Highlights of projects
 1) Tried to used OOPS, SOLID and 12-factor app design
