@@ -3,7 +3,7 @@ from app.config import Config
 import logging
 from logging import config as logging_config
 
-LOG_DIR = Path(__file__).resolve().parent.parent.joinpath('logs')
+LOG_DIR = Path(__file__).resolve().parent.joinpath('logs')
 
 app_logging_config = {
     'version': 1,
