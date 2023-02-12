@@ -43,8 +43,23 @@ Might be required in future, if you want to add other kind of crawlers
 For now only `--type website_links` works
 Default is `website_links`
 
+From your activated virtualenv please run `python -m app.main --url 'http://bbc.co.in' --workers 50 --output file`
 
 ### Highlights of projects
+1) Tried to used OOPS, SOLID and 12-factor app design
+2) app.connection module - connection wrapper, can be used in any project. Generally I would ship this to python libs which the organisation can install and use
+3) app.services ( store services ) - based on input, I inject the storage engine. It can be also be done via Factory method and dependency injection via configuration file
+These services are also reusable and not not dependent on anything
+4) app_logging.py - Control complete logging of app and injected in the very beginning. The log files are stored in logs directory and rotated automatically.
+5) proxy - Is not implemented yet, but the lrequest service can directly use it when request start failing
+6) config.py - Handles environment (maily from os or .env )
+7) setting.py - Control all the setting of app
+8) main.py - Entry point
+9) services.lrequest.lizard_request.py -> Handle all request and retries
+10) website_links.py -> Basically use gevent and all other services to give the desired results
+11) The project make sure there is no deadlock or thread-safety is considered.
+12) All edge cases are considered ( http == https, remove fragment, what is queue is empty, no url requested twice)
+13) Result is written into file or db in chunks
 
 
 ### Todos
