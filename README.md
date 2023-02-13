@@ -44,6 +44,7 @@ For now only `--type website_links` works
 Default is `website_links`
 
 From your activated virtualenv please run `python -m app.main --url 'http://bbc.co.uk' --workers 50 --output file --type website_links`
+The result file would be present in output directory
 
 ### Highlights of projects
 1) Tried to used OOPS, SOLID and 12-factor app design
